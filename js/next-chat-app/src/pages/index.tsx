@@ -6,7 +6,7 @@ import { Message, PickWhereValuesAre } from "../utils/types";
 
 export default function Index() {
 	const [loading, setLoading] = useState(false);
-	const [messages, setMessages] = useState<Array<Message>>([]);
+	const [General, setGeneral] = useState<Array<Message>>([]);
 
 	const [message, setMessage] = useState<Omit<Message, "id" | "isAdmin">>({
 		author: "",
@@ -16,16 +16,16 @@ export default function Index() {
 	const inputRef = useRef<HTMLInputElement | null>(null);
 
 	useChannelMessage<Message>(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message => {
-		setMessages(messages => [message, ...messages]);
+		setGeneral(General => [message, ...General]);
 	});
 
-	const { state } = useReadChannelState<{ messages: Message[] }>(HOP_CHANNEL_NAME);
+	const { state } = useReadChannelState<{ General: Message[] }>(HOP_CHANNEL_NAME);
 
 	useEffect(() => {
-		if (messages.length === 0 && state && state.messages.length > 0) {
-			setMessages(state.messages);
+		if (General.length === 0 && state && state.General.length > 0) {
+			setGeneral(state.General);
 		}
-	}, [state, messages]);
+	}, [state, General]);
 
 	useEffect(() => {
 		if (!loading) {
@@ -108,7 +108,7 @@ export default function Index() {
 			</form>
 
 			<ul>
-				{messages.map(message => (
+				{General.map(message => (
 					<li key={message.id}>
 						<b style={{ color: message.isAdmin ? "gold" : "black" }}>{message.author}</b>:{" "}
 						<span>{message.content}</span>

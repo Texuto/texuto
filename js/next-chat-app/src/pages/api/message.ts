@@ -25,8 +25,8 @@ const handler: NextApiHandler = async (req, res) => {
 
 	await hop.channels.publishMessage(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message);
 
-	await hop.channels.setState<{ messages: Message[] }>(HOP_CHANNEL_NAME, state => ({
-		messages: [message, ...state.messages].slice(0, 20),
+	await hop.channels.setState<{ General: Message[] }>(HOP_CHANNEL_NAME, state => ({
+		General: [message, ...state.General].slice(0, 20),
 	}));
 
 	res.status(200).json({
