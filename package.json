@@ -4,7 +4,7 @@
 	"repository": "git@github.com:hopinc/examples.git",
 	"author": "Hop Developers",
 	"license": "MIT",
-	"packageManager": "yarn@3.2.2",
+	"packageManager": "npm@8.11.0",
 	"workspaces": [
 		"./js/*"
 	],
