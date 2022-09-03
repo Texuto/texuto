@@ -118,7 +118,7 @@ export default function Index() {
 			</form>
 			
 				{General.map(message => (
-					<div className="container">
+					<div className="msg-container">
 						<div className="message-blue">
 							<li key={message.id}>
 								<b style={{ color: message.isAdmin ? "gold" : "black" }}>{message.author}</b><br/>{" "}

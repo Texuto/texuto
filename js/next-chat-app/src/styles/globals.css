@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
-.container {
-    width: 400px;
+.msg-container {  
     padding: 10px;
 }
 
@@ -12,7 +11,7 @@
     padding: 10px;
     background-color: #A8DDFD;
     width: 200px;
-    height: 50px;
+    height: 100px;
     text-align: left;
     font: 400 .9em 'Open Sans', sans-serif;
     border: 1px solid #97C6E3;
