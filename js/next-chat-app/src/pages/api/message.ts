@@ -20,7 +20,7 @@ const handler: NextApiHandler = async (req, res) => {
 		id: nanoid(),
 		content: content.trim(),		
 			author: author === process.env.HOP_PROJECT_TOKEN ? "blaze" : author.trim(),
-			date: date === process.env.HOP_PROJECT_TOKEN ? undefined: date.trim(),
+			date: date === process.env.HOP_PROJECT_TOKEN ? "" : new Date().toLocaleTimeString(),
 		isAdmin: author === process.env.HOP_PROJECT_TOKEN,						
 	};
 
