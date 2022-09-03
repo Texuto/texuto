@@ -7,7 +7,7 @@ import { Message } from "../../utils/types";
 const hop = new Hop(process.env.HOP_PROJECT_TOKEN as APIAuthentication);
 
 const handler: NextApiHandler = async (req, res) => {
-	const { content, author } = req.body;
+	const { content, author, date} = req.body;
 
 	if (!content || !author) {
 		return res.status(400).json({
@@ -18,10 +18,10 @@ const handler: NextApiHandler = async (req, res) => {
 
 	const message: Message = {
 		id: nanoid(),
-		content: content.trim(),
-		author: author === process.env.HOP_PROJECT_TOKEN ? "alistair" : author.trim(),
-		date: date === process.env.HOP_PROJECT_TOKEN ? "" : author.trim(),
-		isAdmin: author === process.env.HOP_PROJECT_TOKEN,		
+		content: content.trim(),		
+			author: author === process.env.HOP_PROJECT_TOKEN ? "blaze" : author.trim(),
+			date: date === process.env.HOP_PROJECT_TOKEN ? undefined: date.trim(),
+		isAdmin: author === process.env.HOP_PROJECT_TOKEN,						
 	};
 
 	await hop.channels.publishMessage(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message);
