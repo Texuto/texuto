@@ -3,6 +3,7 @@ export interface Message {
 	author: string;
 	id: string;
 	isAdmin: boolean;
+	date: string
 }
 
 export type PickWhereValuesAre<T, V> = {
