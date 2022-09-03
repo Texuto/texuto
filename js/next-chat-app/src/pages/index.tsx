@@ -11,6 +11,7 @@ export default function Index() {
 	const [message, setMessage] = useState<Omit<Message, "id" | "isAdmin">>({
 		author: "",
 		content: "",
+		date:"",
 	});
 
 	const inputRef = useRef<HTMLInputElement | null>(null);
@@ -40,15 +41,24 @@ export default function Index() {
 	};
 
 	return (
-		<div>
-			<h1>Hop.io live chat app</h1>
-
-			<p>
-				This is a Next.js app leveraging{" "}
-				<a href="https://docs.hop.io/channels/overview">Hop Channels</a> and{" "}
-				<a href="https://www.npmjs.com/package/@onehop/js">Hop's JavaScript SDK</a>.
-			</p>
-
+		<div>		
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"></link>	
+			<title>Texuto</title>		
+			<nav className="navbar navbar-dark bg-dark">
+				<div className="container">
+					<a className="navbar-brand" href="#">Navbar</a>
+				</div>
+			</nav>	
+			<br/><br/><br/><br/>
+			<nav className="discordnav"> 
+				<a href="" className="active"></a>
+				<hr/>
+				<a href=""></a> 
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>			
+			</nav>		
 			<form
 				onSubmit={async e => {
 					e.preventDefault();
@@ -84,37 +94,40 @@ export default function Index() {
 							setLoading(false);
 						});
 					}
-				}}>
-				<input
-					disabled={loading}
-					type="text"
-					placeholder="Author"
-					value={message.author}
-					onChange={set("author")}
-				/>
+				}}>			
+					<input
+						className="User"
+						disabled={loading}
+						type="text"
+						placeholder="Username"
+						value={message.author}
+						onChange={set("author")}
+					/>
 
-				<input
-					ref={inputRef}
-					disabled={loading}
-					type="text"
-					placeholder="Write a message..."
-					value={message.content}
-					onChange={set("content")}
-				/>
+					<input
+						className="InpField"
+						ref={inputRef}
+						disabled={loading}
+						type="text"
+						placeholder="Write a message..."
+						value={message.content}
+						onChange={set("content")}
+					/>
 
-				<button disabled={loading} type="submit">
-					Send
-				</button>
+					<button disabled={loading} type="submit" className="sendbutton">Send</button>				
 			</form>
-
-			<ul>
+			
 				{General.map(message => (
-					<li key={message.id}>
-						<b style={{ color: message.isAdmin ? "gold" : "black" }}>{message.author}</b>:{" "}
-						<span>{message.content}</span>
-					</li>
+					<div className="container">
+						<div className="message-blue">
+							<li key={message.id}>
+								<b style={{ color: message.isAdmin ? "gold" : "black" }}>{message.author}</b><br/>{" "}
+								<span>{message.content}</span>
+								<div className="message-timestamp-left">{message.date}</div>
+							</li>
+						</div>
+					</div>
 				))}
-			</ul>
 		</div>
 	);
 }

@@ -20,7 +20,8 @@ const handler: NextApiHandler = async (req, res) => {
 		id: nanoid(),
 		content: content.trim(),
 		author: author === process.env.HOP_PROJECT_TOKEN ? "alistair" : author.trim(),
-		isAdmin: author === process.env.HOP_PROJECT_TOKEN,
+		date: date === process.env.HOP_PROJECT_TOKEN ? "" : author.trim(),
+		isAdmin: author === process.env.HOP_PROJECT_TOKEN,		
 	};
 
 	await hop.channels.publishMessage(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message);
