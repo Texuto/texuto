@@ -6,6 +6,7 @@
 
 .message-blue {
     position: relative;
+    top:0;
     margin-left: 80px;
     margin-bottom: 10px;
     padding: 10px;
@@ -102,6 +103,7 @@
 }
 
 body {
+  
 	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
 		helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 }
@@ -112,15 +114,6 @@ button {
 
 button:hover {
 	background: #f5f5f5;
-}
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  background: #36393f;
 }
 
 .discordnav {
@@ -134,7 +127,7 @@ body {
   gap: 15px; 
   padding-top: 12px;
   padding-bottom: 12px;
-  position: absolute;
+  position: fixed;
   top:0;
 }
 
@@ -169,16 +162,16 @@ body {
   padding: 10px;
   border-radius: 6px;
   border-color: gray;
-  position: absolute;
+  position: fixed;
   left:0;
   bottom: 0;
   width: 100%;
+  z-index: 1000; 
 }
 
 .User{
   padding: 10px;
-  border-radius: 6px;
-  border-color: gray;
+  border-radius: 6px;  
   position: absolute;
   right:0;
   top: 0;
@@ -186,9 +179,17 @@ body {
 
 .sendbutton{
   border-color: gray;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right:0;
   padding: 10px;
   border-radius: 3px;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+.UniqueList{
+  list-style: none;
 }

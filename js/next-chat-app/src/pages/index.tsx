@@ -46,10 +46,9 @@ export default function Index() {
 			<title>Texuto</title>		
 			<nav className="navbar navbar-dark bg-dark">
 				<div className="container">
-					<a className="navbar-brand" href="#">Navbar</a>
+					<a className="navbar-brand" href="#">Texuto</a>
 				</div>
-			</nav>	
-			<br/><br/><br/><br/>
+			</nav>				
 			<nav className="discordnav"> 
 				<a href="" className="active"></a>
 				<hr/>
@@ -120,7 +119,7 @@ export default function Index() {
 				{General.map(message => (
 					<div className="msg-container">
 						<div className="message-blue">
-							<li key={message.id}>
+							<li key={message.id} className="UniqueList">
 								<b style={{ color: message.isAdmin ? "gold" : "black" }}>{message.author}</b><br/>{" "}
 								<span>{message.content}</span>
 								<div className="message-timestamp-left">{message.date}</div>
