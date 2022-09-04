@@ -32,6 +32,7 @@ export function ChangeActiveChannel(channel:number){
 export default function Index() {
 	const [loading, setLoading] = useState(false);
 	const [General, setGeneral] = useState<Array<Message>>([]);
+	const [ text, setText ] = useState('')
 	const [message, setMessage] = useState<Omit<Message, "id" | "isAdmin">>({
 		author: "",
 		content: "",
@@ -72,10 +73,21 @@ export default function Index() {
 			<title id="Title">Texuto</title>		
 			<link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
 			<nav className="navbar navbar-dark bg-dark">
-				<div className="container">
-					<a id="NavTitle" className="navbar-brand" href="#">Texuto</a>
-				</div>
-			</nav>							
+				<a className="navbar-brand" href="#">Texuto</a>
+				<li className="nav-item">
+					<a className="nav-link" href="#">Help</a>
+				</li>
+			</nav>				
+			<nav className="discordnav"> 		
+				<a href="#" className="active">
+				<img alt="logo" src="favicon.ico" width="50" height="50" />
+				</a><hr/>				
+				<div className="discordnavlink"  title="Github" >
+					<a href="https://github.com/Texuto/Texuto" className="active">
+						<img src="https://cdn-icons-png.flaticon.com/512/1051/1051377.png?w=360" width="50" height="50" />
+					</a>
+				</div>				
+			</nav>		
 			<form
 				onSubmit={async e => {
 					e.preventDefault();
