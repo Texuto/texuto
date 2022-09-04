@@ -81,17 +81,17 @@ export default function Index() {
 				<a href="#" className="active">
 				<img alt="logo" src="favicon.ico" width="50" height="50" />
 				</a><hr/>				
-				<div className="discordnavlink" href=""  title="Github" >
-					<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50" height="50" />
+				<div className="discordnavlink" title="Github" >
+					<a href="https://github.com/Texuto" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50" height="50" /></a>
 				</div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred">
-					<img src="https://cdn-icons-png.flaticon.com/512/2893/2893811.png" width="50" height="50" />
+					<a><img src="https://cdn-icons-png.flaticon.com/512/2893/2893811.png" width="50" height="50" /></a>
 				</div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings">
-					<img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="50" height="50"/>
+					<a><img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="50" height="50"/></a>
 				</div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile">
-					<img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="50" height="50"/>
+					<a><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="50" height="50"/></a>
 				</div> 				
 			</nav>		
 			<form
