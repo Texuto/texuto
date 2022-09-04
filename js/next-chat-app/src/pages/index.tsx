@@ -1,6 +1,7 @@
 import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { startTransition, useEffect, useRef, useState } from "react";
 import { getErrorMessage } from "../utils/errors";
+import InputEmoji from "react-input-emoji";
 import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
 
@@ -32,7 +33,7 @@ export function ChangeActiveChannel(channel:number){
 export default function Index() {
 	const [loading, setLoading] = useState(false);
 	const [General, setGeneral] = useState<Array<Message>>([]);
-
+	const [ text, setText ] = useState('')
 	const [message, setMessage] = useState<Omit<Message, "id" | "isAdmin">>({
 		author: "",
 		content: "",
@@ -68,7 +69,9 @@ export default function Index() {
 	return (
 		<div>		
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"></link>	
+
 			<title id="Title">Texuto</title>		
+			<link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
 			<nav className="navbar navbar-dark bg-dark">
 				<div className="container">
 					<a id="NavTitle" className="navbar-brand" href="#">Texuto</a>
@@ -136,7 +139,9 @@ export default function Index() {
 						placeholder="Write a message..."
 						value={message.content}
 						onChange={set("content")}
+
 					/>
+					
 
 					<button disabled={loading} type="submit" className="sendbutton">Send</button>				
 			</form>

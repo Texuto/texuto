@@ -192,3 +192,7 @@ input:focus {
 .UniqueList{
   list-style: none;
 }
+.navbar-brand{
+  position: relative;
+  left: 50%;
+}
