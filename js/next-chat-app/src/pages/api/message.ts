@@ -1,7 +1,7 @@
 import { Hop, APIAuthentication } from "@onehop/js";
 import { nanoid } from "nanoid";
 import { NextApiHandler } from "next";
-import { HOP_CHANNEL_NAME} from "../../utils/config";
+import { ChannelName } from "../api/channel";
 import { Message } from "../../utils/types";
 
 const hop = new Hop(process.env.HOP_PROJECT_TOKEN as APIAuthentication);
@@ -24,9 +24,9 @@ const handler: NextApiHandler = async (req, res) => {
 		isAdmin: author === process.env.HOP_PROJECT_TOKEN,						
 	};
 
-	await hop.channels.publishMessage(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message);
+	await hop.channels.publishMessage(ChannelName, "MESSAGE_CREATE", message);
 
-	await hop.channels.setState<{ General: Message[] }>(HOP_CHANNEL_NAME, state => ({
+	await hop.channels.setState<{ General: Message[] }>(ChannelName, state => ({
 		General: [message, ...state.General].slice(0, 20),
 	}));
 

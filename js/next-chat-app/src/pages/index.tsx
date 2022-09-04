@@ -1,31 +1,32 @@
 import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { startTransition, useEffect, useRef, useState } from "react";
-import { HOP_CHANNEL_NAME } from "../utils/config";
-import { HOP_CHANNEL_NAME1 } from "api/channel";
 import { getErrorMessage } from "../utils/errors";
+import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
 
-var ChannelName = "Anime"
-
 // checks current hop channel
-export function ChangeActiveChannel(channel:number){
+export function ChangeActiveChannel(channel:number){		
 	switch(channel){
 		case 1:
-			ChannelName = "General"
+			ChangeChannel("General")						
 			break;
 		case 2:
-			var ChannelName = "Selfies"
+			ChangeChannel("Selfies")						
 			break;
 		case 3:
-			ChannelName = "Anime"
+			ChangeChannel("Anime")								
 			break;
 		case 4:
-			var ChannelName = "Music"
+			ChangeChannel("Music")									
 			break;
 		case 5:
-			ChannelName = "Lounge"
+			ChangeChannel("Lounge")								
 			break;
+		default:
+			ChangeChannel("General")								
 	}
+	let TitleContainer = document.getElementById("Title") as HTMLInputElement;
+	TitleContainer.value = "Texuto | " + ChannelName;
 }
 
 export default function Index() {
@@ -67,20 +68,20 @@ export default function Index() {
 	return (
 		<div>		
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"></link>	
-			<title>Texuto</title>		
+			<title id="Title">Texuto</title>		
 			<nav className="navbar navbar-dark bg-dark">
 				<div className="container">
-					<a className="navbar-brand" href="#">Texuto</a>
+					<a id="NavTitle" className="navbar-brand" href="#">Texuto</a>
 				</div>
 			</nav>				
 			<nav className="discordnav"> 
 				<a href="" className="active"></a>
 				<hr/>
-				<a href="GeneralChannelButton"></a> 
-				<a href="SelfiesChannelButton"></a>
-				<a href="MusicChannelButton"></a>
-				<a href="LoungeChannelButton"></a>
-				<a href="GeneralChannelButton"></a>			
+				<a onClick={()=>ChangeActiveChannel(1)} title="General"></a> 
+				<a onClick={()=>ChangeActiveChannel(2)} title="Selfies"></a>
+				<a onClick={()=>ChangeActiveChannel(3)} title="Anime"></a>
+				<a onClick={()=>ChangeActiveChannel(4)} title="Music"></a>
+				<a onClick={()=>ChangeActiveChannel(5)} title="Lounge"></a>			
 			</nav>		
 			<form
 				onSubmit={async e => {
