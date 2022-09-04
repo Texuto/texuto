@@ -1,0 +1,5 @@
+export const HOP_CHANNEL_NAME1="General"
+export const HOP_CHANNEL_NAME2="Anime"
+export const HOP_CHANNEL_NAME3="Selfies"
+export const HOP_CHANNEL_NAME4="Music"
+export const HOP_CHANNEL_NAME5="Lounge"

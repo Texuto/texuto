@@ -1,8 +1,32 @@
 import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { startTransition, useEffect, useRef, useState } from "react";
 import { HOP_CHANNEL_NAME } from "../utils/config";
+import { HOP_CHANNEL_NAME1 } from "api/channel";
 import { getErrorMessage } from "../utils/errors";
 import { Message, PickWhereValuesAre } from "../utils/types";
+
+var ChannelName = "Anime"
+
+// checks current hop channel
+export function ChangeActiveChannel(channel:number){
+	switch(channel){
+		case 1:
+			ChannelName = "General"
+			break;
+		case 2:
+			var ChannelName = "Selfies"
+			break;
+		case 3:
+			ChannelName = "Anime"
+			break;
+		case 4:
+			var ChannelName = "Music"
+			break;
+		case 5:
+			ChannelName = "Lounge"
+			break;
+	}
+}
 
 export default function Index() {
 	const [loading, setLoading] = useState(false);
@@ -16,11 +40,11 @@ export default function Index() {
 
 	const inputRef = useRef<HTMLInputElement | null>(null);
 
-	useChannelMessage<Message>(HOP_CHANNEL_NAME, "MESSAGE_CREATE", message => {
+	useChannelMessage<Message>(ChannelName, "MESSAGE_CREATE", message => {
 		setGeneral(General => [message, ...General]);
 	});
 
-	const { state } = useReadChannelState<{ General: Message[] }>(HOP_CHANNEL_NAME);
+	const { state } = useReadChannelState<{ General: Message[] }>(ChannelName);
 
 	useEffect(() => {
 		if (General.length === 0 && state && state.General.length > 0) {
@@ -52,11 +76,11 @@ export default function Index() {
 			<nav className="discordnav"> 
 				<a href="" className="active"></a>
 				<hr/>
-				<a href=""></a> 
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>			
+				<a href="GeneralChannelButton"></a> 
+				<a href="SelfiesChannelButton"></a>
+				<a href="MusicChannelButton"></a>
+				<a href="LoungeChannelButton"></a>
+				<a href="GeneralChannelButton"></a>			
 			</nav>		
 			<form
 				onSubmit={async e => {
