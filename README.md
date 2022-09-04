@@ -1,9 +1,11 @@
 # Texuto
-nextjs chat app
+Next-JS based realtime chat app
 
 # Hosted 
 hosted on: https://texuto.vercel.app/
 
 **Team**
-SRI (ceo and founder of texuto)
-!Blaze --> Dinesh 
+<ul>
+  <li>Blaze: @blaze-dev</li>
+  <li>SRI: @srivamsirajesh</li>
+</ul>
