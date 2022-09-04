@@ -16,6 +16,6 @@
 		"moduleResolution": "node",
 		"noImplicitAny": false
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/hero.jsx"],
 	"exclude": ["node_modules"]
 }

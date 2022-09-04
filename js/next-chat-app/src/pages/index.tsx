@@ -32,7 +32,6 @@ export function ChangeActiveChannel(channel:number){
 export default function Index() {
 	const [loading, setLoading] = useState(false);
 	const [General, setGeneral] = useState<Array<Message>>([]);
-	const [ text, setText ] = useState('')
 	const [message, setMessage] = useState<Omit<Message, "id" | "isAdmin">>({
 		author: "",
 		content: "",
@@ -76,31 +75,7 @@ export default function Index() {
 				<div className="container">
 					<a id="NavTitle" className="navbar-brand" href="#">Texuto</a>
 				</div>
-			</nav>				
-			<nav className="discordnav"> 		
-				<a href="#" className="active">
-				<img alt="logo" src="favicon.ico" width="50" height="50" />
-				</a><hr/>				
-				<div className="discordnavlink" title="Github" >
-					<a href="https://github.com/Texuto" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="50" height="50" /></a>
-				</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred">
-					<a><img src="https://cdn-icons-png.flaticon.com/512/2893/2893811.png" width="50" height="50" /></a>
-				</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings">
-					<a><img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="50" height="50"/></a>
-				</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile">
-					<a><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="50" height="50"/></a>
-				</div> 				
-				</a><hr/>
-				<div className="fa-solid fa-house"></div>
-				<div className="discordnavlink"  title="Github" >
-					<a href="https://github.com/Texuto/Texuto" className="active">
-					<img src="https://cdn-icons-png.flaticon.com/512/1051/1051377.png?w=360" width="50" height="50" />
-					</a>
-					</div>				
-			</nav>		
+			</nav>							
 			<form
 				onSubmit={async e => {
 					e.preventDefault();
