@@ -83,16 +83,10 @@ export default function Index() {
 				</a><hr/>
 				<div className="fa-solid fa-house"></div>
 				<div className="discordnavlink"  title="Github" >
-					<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="40" height="40" />
-					</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred">
-					<img src="https://cdn-icons-png.flaticon.com/512/2893/2893811.png" width="50" height="50" /></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings">
-					<img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="50" height="50"/>
-					</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile">
-					<img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="50" height="50"/>
-					</div> 				
+					<a href="https://github.com/Texuto/Texuto" className="active">
+					<img src="https://cdn-icons-png.flaticon.com/512/1051/1051377.png?w=360" width="50" height="50" />
+					</a>
+					</div>				
 			</nav>		
 			<form
 				onSubmit={async e => {
