@@ -1,8 +1,9 @@
-import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { startTransition, useEffect, useRef, useState } from "react";
+import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { getErrorMessage } from "../utils/errors";
 import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
+import InputEmoji from "react-input-emoji";
 
 // checks current hop channel
 export function ChangeActiveChannel(channel:number){		
@@ -80,11 +81,11 @@ export default function Index() {
 			<nav className="discordnav"> 
 				<a href="" className="active"></a>
 				<hr/>
-				<a onClick={()=>ChangeActiveChannel(1)} title="General"></a> 
-				<a onClick={()=>ChangeActiveChannel(2)} title="Selfies"></a>
-				<a onClick={()=>ChangeActiveChannel(3)} title="Anime"></a>
-				<a onClick={()=>ChangeActiveChannel(4)} title="Music"></a>
-				<a onClick={()=>ChangeActiveChannel(5)} title="Lounge"></a>			
+				<a onClick={()=>ChangeActiveChannel(1)} href="/" title="General"></a> 
+				<a onClick={()=>ChangeActiveChannel(2)} href="/" title="Selfies"></a>
+				<a onClick={()=>ChangeActiveChannel(3)} href="/" title="Anime"></a>
+				<a onClick={()=>ChangeActiveChannel(4)} href="/" title="Music"></a>
+				<a onClick={()=>ChangeActiveChannel(5)} href="/" title="Lounge"></a>			
 			</nav>		
 			<form
 				onSubmit={async e => {
@@ -131,7 +132,7 @@ export default function Index() {
 						onChange={set("author")}
 					/>
 
-					<input
+					<InputEmoji
 						className="InpField"
 						ref={inputRef}
 						disabled={loading}
