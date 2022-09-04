@@ -1,7 +1,6 @@
 import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { startTransition, useEffect, useRef, useState } from "react";
 import { getErrorMessage } from "../utils/errors";
-import InputEmoji from "react-input-emoji";
 import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
 
@@ -49,10 +48,11 @@ export default function Index() {
 	const { state } = useReadChannelState<{ General: Message[] }>(ChannelName);
 
 	useEffect(() => {
+		if(!state) return;
 		if (General.length === 0 && state && state.General.length > 0) {
-			setGeneral(state.General);
+		  setGeneral(state.General);
 		}
-	}, [state, General]);
+	  }, [state, General]);
 
 	useEffect(() => {
 		if (!loading) {

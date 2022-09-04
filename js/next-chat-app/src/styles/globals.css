@@ -103,6 +103,7 @@
 }
 
 body {  
+  background-color: darkgray !important;
 	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
 		helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 }
@@ -158,9 +159,11 @@ button:hover {
 }
 
 .InpField{
+  background-color: lightgray;
   padding: 10px;
   border-radius: 6px;
-  border-color: gray;
+  border-color: grey;
+  border-width: 1px;
   position: fixed;
   left:0;
   bottom: 0;
