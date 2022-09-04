@@ -1,10 +1,8 @@
 import { startTransition, useEffect, useRef, useState } from "react";
 import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { getErrorMessage } from "../utils/errors";
-import InputEmoji from "react-input-emoji";
 import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
-import InputEmoji from "react-input-emoji";
 
 // checks current hop channel
 export function ChangeActiveChannel(channel:number){		
@@ -70,6 +68,7 @@ export default function Index() {
 	return (
 		<div>		
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous"></link>	
+			<script src="https://kit.fontawesome.com/9fc393ed11.js" crossOrigin="anonymous"></script>
 
 			<title id="Title">Texuto</title>		
 			<link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
@@ -79,13 +78,13 @@ export default function Index() {
 				</div>
 			</nav>				
 			<nav className="discordnav"> 
-				<a href="" className="active"></a>
+				<a href="" className="active"><i className="fa-solid fa-house"></i></a>
 				<hr/>
-				<a onClick={()=>ChangeActiveChannel(1)} href="/" title="General"></a> 
-				<a onClick={()=>ChangeActiveChannel(2)} href="/" title="Selfies"></a>
-				<a onClick={()=>ChangeActiveChannel(3)} href="/" title="Anime"></a>
-				<a onClick={()=>ChangeActiveChannel(4)} href="/" title="Music"></a>
-				<a onClick={()=>ChangeActiveChannel(5)} href="/" title="Lounge"></a>			
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(1)} title="General"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Selfies"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Anime"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Music"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(5)} title="Lounge"></div> 
 			</nav>		
 			<form
 				onSubmit={async e => {
@@ -132,7 +131,7 @@ export default function Index() {
 						onChange={set("author")}
 					/>
 
-					<InputEmoji
+					<input
 						className="InpField"
 						ref={inputRef}
 						disabled={loading}
