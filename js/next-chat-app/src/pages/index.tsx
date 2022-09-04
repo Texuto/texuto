@@ -78,14 +78,11 @@ export default function Index() {
 				</div>
 			</nav>				
 			<nav className="discordnav"> 
-
-				<a href="" className="active"><i className="fa-solid fa-house"></i></a>
-
 				<a href="#" className="active">
 				<img alt="logo" src="favicon.ico" width="50" height="50" />
 				</a>
 				<hr/>
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(1)} title="General"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(1)} title="General"><div className="fa-solid fa-house"></div></div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Selfies"></div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Anime"></div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Music"></div> 
