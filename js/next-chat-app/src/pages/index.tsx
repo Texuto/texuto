@@ -79,7 +79,7 @@ export default function Index() {
 			</nav>				
 			<nav className="discordnav"> 
 
-				<a href="" className="active"><i className="fa-solid fa-house"></i></a>
+				<a href="" className="active"></a>
 
 				<a href="#" className="active">
 				<img alt="logo" src="favicon.ico" width="50" height="50" />
@@ -163,7 +163,7 @@ export default function Index() {
 							</li>
 						</div>
 					</div>
-				))}
+				))}				
 		</div>
 	);
 }
