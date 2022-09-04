@@ -12,8 +12,8 @@
 		"@chakra-ui/react": "^2.3.1",
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
+		"emoji-picker-react": "^3.6.1",
 		"framer-motion": "^7.2.1",
-		"heroku-postbuild": "npm run build"
-
+		"react-input-emoji": "^4.2.0"
 	}
 }
