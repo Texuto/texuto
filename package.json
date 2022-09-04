@@ -1,9 +1,8 @@
 {
-	"name": "@hopinc/examples",
+	"name": "texuto",
 	"version": "1.0.0",
-	"repository": "git@github.com:hopinc/examples.git",
-	"author": "Hop Developers",
-	"license": "MIT",
+	"repository": "#",
+	"author": "Texuto Team",
 	"packageManager": "npm@8.11.0",
 	"workspaces": [
 		"./js/*"
