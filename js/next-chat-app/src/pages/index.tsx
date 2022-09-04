@@ -3,7 +3,6 @@ import { useChannelMessage, useReadChannelState } from "@onehop/react";
 import { getErrorMessage } from "../utils/errors";
 import { ChannelName, ChangeChannel } from "../pages/api/channel";
 import { Message, PickWhereValuesAre } from "../utils/types";
-
 // checks current hop channel
 export function ChangeActiveChannel(channel:number){		
 	switch(channel){
@@ -83,10 +82,17 @@ export default function Index() {
 				</a>
 				<hr/>
 				<div className="fa-solid fa-house"></div>
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Github">z</div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred"></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings"></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile"></div> 				
+				<div className="discordnavlink"  title="Github" >
+					<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="40" height="40" />
+					</div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred">
+					<img src="https://cdn-icons-png.flaticon.com/512/2893/2893811.png" width="50" height="50" /></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings">
+					<img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="50" height="50"/>
+					</div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile">
+					<img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" width="50" height="50"/>
+					</div> 				
 			</nav>		
 			<form
 				onSubmit={async e => {
