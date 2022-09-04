@@ -2,7 +2,8 @@
 nextjs chat app
 
 # Hosted 
-hosted on: https://texuto-eight.vercel.app/
+hosted on: https://texuto.vercel.app/
 
 **Team**
+SRI (ceo and founder of texuto)
 !Blaze --> Dinesh 
