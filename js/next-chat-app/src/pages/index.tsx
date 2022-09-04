@@ -83,7 +83,7 @@ export default function Index() {
 				</a>
 				<hr/>
 				<div className="fa-solid fa-house"></div>
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Github"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Github">z</div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred"></div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings"></div> 
 				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile"></div> 				
