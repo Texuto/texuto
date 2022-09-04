@@ -82,11 +82,11 @@ export default function Index() {
 				<img alt="logo" src="favicon.ico" width="50" height="50" />
 				</a>
 				<hr/>
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(1)} title="General"><div className="fa-solid fa-house"></div></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Selfies"></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Anime"></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Music"></div> 
-				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(5)} title="Lounge"></div> 
+				<div className="fa-solid fa-house"></div>
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(2)} title="Github"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Starred"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(3)} title="Settings"></div> 
+				<div className="discordnavlink" onClick={()=>ChangeActiveChannel(4)} title="Profile"></div> 				
 			</nav>		
 			<form
 				onSubmit={async e => {
