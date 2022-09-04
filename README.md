@@ -1,1 +1,5 @@
-https://texuto-ggbwleed3-texutochat.vercel.app
+# Texuto
+nextjs chat app
+
+# Hosted 
+hosted on: https://texuto-eight.vercel.app/
