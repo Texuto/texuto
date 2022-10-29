@@ -6,8 +6,8 @@ hosted on: https://texuto.vercel.app/
 
 **Team**
 <ul>
-  <li>Blaze: @blaze-pvt</li>
-  <li>SRI: @srivamsirajesh</li>
+  <li>Dinesh: <a href="github.com/dinxsh">@dinxsh</a></li>
+  <li>SRI: <a href="github.com/srivamsirajesh">@srivamsirajesh</a></li>
 </ul>
 
 ## Credits
